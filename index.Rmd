@@ -211,7 +211,9 @@ In model learning, garbage in produces garbage out, and judicious understanding 
 
 <em>n.b.: the `pml-testing.csv` results are not provided here in keeping with the course honor code. They have been submitted separately under 'Course Project: Submission'.</em>
 
-## Citations
+## Bibliography
+* Kabacoff, Robert. *R in Action, Second Edition*. NY: Manning Publications Co., 2015: 389-408. Print.
 * Velloso, E.; Bulling, A.; Gellersen, H.; Ugulino, W.; Fuks, H. Qualitative Activity Recognition of Weight Lifting Exercises. Proceedings of 4th International Conference in Cooperation with SIGCHI (Augmented Human '13) . Stuttgart, Germany: ACM SIGCHI, 2013.
+* The many helpful contributors at the Coursera devdataprod-33 discussion fora.
 
 ## Footnotes
