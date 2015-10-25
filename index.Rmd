@@ -138,11 +138,11 @@ A random forest approach grows many classification trees. An input vector is run
 
 In a typical approach, $k$-fold cross validation is used internally for model selection. **Cross validation** is a powerful tool where out-of-sample error is estimated within the training set in order to tune the model. In $k$-fold CV, the training set is divided into $k$ equal-sized partitions to serve as validation sets against their opposite, paired training subsets. Validation error rate is averaged over all folds in order to produce an estimate of out-of-sample error.
 
-In the case of RF, cross-validation is obviated by an internal process which produces an unbiased out-of-sample error estimate called the **out-of-bag (oob) error estimate**. Each tree of the forest is grown using a different bootstrap sampling (with replacement) of the training set. A portion of the bootstrap sample is left out in the growth of each tree, and those left out cases are classified according to their associated tree. This results in an error estimate similar in concept to cross validation, and which has been "proven to be unbiased in many tests"[^1] (Breiman).
+In the case of RF, cross-validation is obviated by an internal process which produces an unbiased out-of-sample error estimate called the **out-of-bag (oob) error estimate**. Each tree of the forest is grown using a different bootstrap sampling (with replacement) of the training set. A portion of the bootstrap sample is left out in the growth of each tree, and those left out cases are classified according to their associated tree. This results in an error estimate similar in concept to cross validation, and which has been "proven to be unbiased in many tests"[^1] (Breiman, Cutler).
 
 [^1]: http://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm
 
-It is Breiman's approach which is implemented in the `randomForest` package.
+It is the Breiman/Cutler approach which is implemented in the `randomForest` package.
 
 ## RF model fit
 
@@ -203,7 +203,7 @@ The data also is limited to classification for 1.25kg dumbbell lifts, and certai
 
 Supervised learning is a very powerful tool that allows us to develop models to solve classification problems using training data.
 
-We have used Breiman's Random Forest approach to produce a very accurate model on a qualitative human activity recognition dataset. In a classification problem -- "What type of dumbbell exercise was performed?" -- it is perhaps unsurprising to see Euclidean orientation features from belt, dumbbell, and forearm attached sensors top the list of important variables.
+We have used Breiman and Cutler's Random Forest approach to produce a very accurate model on a qualitative human activity recognition dataset. In a classification problem -- "What type of dumbbell exercise was performed?" -- it is perhaps unsurprising to see Euclidean orientation features from belt, dumbbell, and forearm attached sensors top the list of important variables.
 
 In model learning, garbage in produces garbage out, and judicious understanding and application of the data is paramount -- even moreso than the ultimate approach, of which we have only detailed one of many. We hope to have laid a breadth of foundation on which to build understanding of machine learning and its applications. Happy exploring!
 
@@ -213,7 +213,9 @@ In model learning, garbage in produces garbage out, and judicious understanding 
 
 ## Bibliography
 * Kabacoff, Robert. *R in Action, Second Edition*. NY: Manning Publications Co., 2015: 389-408. Print.
+* Breiman, Leo, and Adele Cutler. "Random Forests - Classification Description." Random Forests. University of California at Berkeley, 3 Mar. 2004. Web. 15 Oct. 2015.
 * Velloso, E.; Bulling, A.; Gellersen, H.; Ugulino, W.; Fuks, H. Qualitative Activity Recognition of Weight Lifting Exercises. Proceedings of 4th International Conference in Cooperation with SIGCHI (Augmented Human '13) . Stuttgart, Germany: ACM SIGCHI, 2013.
-* The many helpful contributors at the Coursera predmachlearn-33 discussion fora.
+
+Further acknowledgements: Dr. Jeff Leek and the Johns Hopkins team behind the Practical Machine Learning Coursera course, and the many helpful contributors at the predmachlearn-33 class discussion fora.
 
 ## Footnotes

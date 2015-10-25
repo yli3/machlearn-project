@@ -200,8 +200,8 @@ img {
 <p>We are now ready to fit a model. We select the Random Forest method: a combination approach well-suited to categorization problems with numerous indicators.</p>
 <p>A random forest approach grows many classification trees. An input vector is run through every tree, which gives its own vote, and the RF model selects the tree with the most votes to use for classification.</p>
 <p>In a typical approach, <span class="math inline">\(k\)</span>-fold cross validation is used internally for model selection. <strong>Cross validation</strong> is a powerful tool where out-of-sample error is estimated within the training set in order to tune the model. In <span class="math inline">\(k\)</span>-fold CV, the training set is divided into <span class="math inline">\(k\)</span> equal-sized partitions to serve as validation sets against their opposite, paired training subsets. Validation error rate is averaged over all folds in order to produce an estimate of out-of-sample error.</p>
-<p>In the case of RF, cross-validation is obviated by an internal process which produces an unbiased out-of-sample error estimate called the <strong>out-of-bag (oob) error estimate</strong>. Each tree of the forest is grown using a different bootstrap sampling (with replacement) of the training set. A portion of the bootstrap sample is left out in the growth of each tree, and those left out cases are classified according to their associated tree. This results in an error estimate similar in concept to cross validation, and which has been “proven to be unbiased in many tests”<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> (Breiman).</p>
-<p>It is Breiman’s approach which is implemented in the <code>randomForest</code> package.</p>
+<p>In the case of RF, cross-validation is obviated by an internal process which produces an unbiased out-of-sample error estimate called the <strong>out-of-bag (oob) error estimate</strong>. Each tree of the forest is grown using a different bootstrap sampling (with replacement) of the training set. A portion of the bootstrap sample is left out in the growth of each tree, and those left out cases are classified according to their associated tree. This results in an error estimate similar in concept to cross validation, and which has been “proven to be unbiased in many tests”<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> (Breiman, Cutler).</p>
+<p>It is the Breiman/Cutler approach which is implemented in the <code>randomForest</code> package.</p>
 </div>
 <div id="rf-model-fit" class="section level2">
 <h2>RF model fit</h2>
@@ -274,7 +274,7 @@ img {
 <div id="our-results" class="section level2">
 <h2>Our results</h2>
 <p>Supervised learning is a very powerful tool that allows us to develop models to solve classification problems using training data.</p>
-<p>We have used Breiman’s Random Forest approach to produce a very accurate model on a qualitative human activity recognition dataset. In a classification problem – “What type of dumbbell exercise was performed?” – it is perhaps unsurprising to see Euclidean orientation features from belt, dumbbell, and forearm attached sensors top the list of important variables.</p>
+<p>We have used Breiman and Cutler’s Random Forest approach to produce a very accurate model on a qualitative human activity recognition dataset. In a classification problem – “What type of dumbbell exercise was performed?” – it is perhaps unsurprising to see Euclidean orientation features from belt, dumbbell, and forearm attached sensors top the list of important variables.</p>
 <p>In model learning, garbage in produces garbage out, and judicious understanding and application of the data is paramount – even moreso than the ultimate approach, of which we have only detailed one of many. We hope to have laid a breadth of foundation on which to build understanding of machine learning and its applications. Happy exploring!</p>
 <p><em style="font-family:monospace">word count: ~1900 incl. code</em></p>
 <p><em>n.b.: the <code>pml-testing.csv</code> results are not provided here in keeping with the course honor code. They have been submitted separately under ‘Course Project: Submission’.</em></p>
@@ -283,9 +283,10 @@ img {
 <h2>Bibliography</h2>
 <ul>
 <li>Kabacoff, Robert. <em>R in Action, Second Edition</em>. NY: Manning Publications Co., 2015: 389-408. Print.</li>
+<li>Breiman, Leo, and Adele Cutler. “Random Forests - Classification Description.” Random Forests. University of California at Berkeley, 3 Mar. 2004. Web. 15 Oct. 2015.</li>
 <li>Velloso, E.; Bulling, A.; Gellersen, H.; Ugulino, W.; Fuks, H. Qualitative Activity Recognition of Weight Lifting Exercises. Proceedings of 4th International Conference in Cooperation with SIGCHI (Augmented Human ’13) . Stuttgart, Germany: ACM SIGCHI, 2013.</li>
-<li>The many helpful contributors at the Coursera predmachlearn-33 discussion fora.</li>
 </ul>
+<p>Further acknowledgements: Dr. Jeff Leek and the Johns Hopkins team behind the Practical Machine Learning Coursera course, and the many helpful contributors at the predmachlearn-33 class discussion fora.</p>
 </div>
 <div id="footnotes" class="section level2">
 <h2>Footnotes</h2>
