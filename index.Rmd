@@ -116,7 +116,7 @@ A number of the remaining variables are non features; that is, they are not sens
 ### Feature variance
 Another concern is feature variance, which arises from large distinctions between different subjects.
 
-```{r explore_variance, warnings = FALSE}
+```{r explore_variance, warning = FALSE}
   df.spread <- lapply(df.train, function(e) sd(e)/mean(e))
   length(df.spread[which(abs(as.numeric(df.spread)) >= 3)])
   length(df.spread[which(abs(as.numeric(df.spread)) >= 2)])

@@ -183,10 +183,8 @@ img {
 <div id="feature-variance" class="section level3">
 <h3>Feature variance</h3>
 <p>Another concern is feature variance, which arises from large distinctions between different subjects.</p>
-<pre class="r"><code>  df.spread &lt;- lapply(df.train, function(e) sd(e)/mean(e))</code></pre>
-<pre><code>## Warning in mean.default(e): argument is not numeric or logical: returning
-## NA</code></pre>
-<pre class="r"><code>  length(df.spread[which(abs(as.numeric(df.spread)) &gt;= 3)])</code></pre>
+<pre class="r"><code>  df.spread &lt;- lapply(df.train, function(e) sd(e)/mean(e))
+  length(df.spread[which(abs(as.numeric(df.spread)) &gt;= 3)])</code></pre>
 <pre><code>## [1] 20</code></pre>
 <pre class="r"><code>  length(df.spread[which(abs(as.numeric(df.spread)) &gt;= 2)])</code></pre>
 <pre><code>## [1] 30</code></pre>

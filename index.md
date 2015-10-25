@@ -117,14 +117,6 @@ Another concern is feature variance, which arises from large distinctions betwee
 
 ```r
   df.spread <- lapply(df.train, function(e) sd(e)/mean(e))
-```
-
-```
-## Warning in mean.default(e): argument is not numeric or logical: returning
-## NA
-```
-
-```r
   length(df.spread[which(abs(as.numeric(df.spread)) >= 3)])
 ```
 
