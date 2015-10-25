@@ -186,7 +186,7 @@ These results are promising and show very low in sample error, as well as OOB es
 
 
 ```r
-  plot(fit.rf, main = "")
+  plot(fit.rf)
 ```
 
 ![Fig. 1: fit.rf OOB error estimates](index_files/figure-html/plot_fit_rf-1.png) 
@@ -236,7 +236,7 @@ We may be happy with this result, but in pursuit of a more parsimonious model --
 
 
 ```r
-  varImpPlot(fit.rf, main = "")
+  varImpPlot(fit.rf)
 ```
 
 ![Fig. 2: fit.rf variable importance](index_files/figure-html/plot_varimp_rf-1.png) 
