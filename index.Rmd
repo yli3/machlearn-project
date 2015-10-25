@@ -156,7 +156,7 @@ It is the Breiman/Cutler approach which is implemented in the `randomForest` pac
 These results are promising and show very low in sample error, as well as OOB estimate.
 
 ```{r plot_fit_rf, fig.cap = "Fig. 1: fit.rf OOB error estimates"}
-  plot(fit.rf, main = "")
+  plot(fit.rf)
 ```
 
 The **fit.rf** plot shows OOB estimates both overall, and class error over the course of the model training as the number of trees in the forest increased. The default `500` trees were more than was needed. There was very little improvement after roughly 30-50 trees, and that's typical with random forests -- but can vary depending on the problem.
@@ -186,7 +186,7 @@ This result is actually quite close to the percentage OOB estimate provided by t
 We may be happy with this result, but in pursuit of a more parsimonious model -- with greater generalization and less overfitting, at the possible expense of accuracy -- we might consider variable importance, and build a new model after discarding variables notably lesser in significance.
 
 ```{r plot_varimp_rf, fig.height = 8, fig.cap = "Fig. 2: fit.rf variable importance"}
-  varImpPlot(fit.rf, main = "")
+  varImpPlot(fit.rf)
 ```
 
 A variable importance plot points to several variables being significantly more important than others. This plot shows only the top 30 variables by importance, but `fit.rf$importance` shows us there are ```r nrow(fit.rf$importance)``` variables included in the model.
